@@ -1,0 +1,25 @@
+﻿@model IEnumerable<GymWebApp.Models.Member>
+@{
+    ViewBag.Title = "Member Directory";
+}
+<h2>Member Directory</h2>
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Name</th><th>Age</th><th>Email</th><th>Phone</th><th>Plan</th><th>Discount</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.Name</td>
+            <td>@m.Age</td>
+            <td>@m.Email</td>
+            <td>@m.Phone</td>
+            <td>@m.MembershipType</td>
+            <td>@(m.YearlyDiscountPercent?.ToString() ?? "-")</td>
+        </tr>
+    }
+    </tbody>
+</table>

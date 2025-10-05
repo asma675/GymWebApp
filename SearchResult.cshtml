@@ -1,0 +1,14 @@
+﻿@model GymWebApp.Models.Member
+<h2>Search Result</h2>
+@if (Model == null) {
+    <p>No member found.</p>
+} else {
+    <table class="table table-bordered w-50">
+        <tr><th>Name</th><td>@Model.Name</td></tr>
+        <tr><th>Age</th><td>@Model.Age</td></tr>
+        <tr><th>Email</th><td>@Model.Email</td></tr>
+        <tr><th>Phone</th><td>@Model.Phone</td></tr>
+        <tr><th>Type</th><td>@Model.MembershipType</td></tr>
+        <tr><th>Discount</th><td>@(Model.YearlyDiscountPercent?.ToString() ?? "-")</td></tr>
+    </table>
+}

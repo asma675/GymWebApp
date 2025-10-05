@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Thanks for joining Asma's Gym!";
+    var name = (string)ViewBag.SignedUpName ?? "New Member";
+    var count = (int)ViewBag.SignedUpCount;
+    var type = (string)ViewBag.MembershipType;
+    var disc = (int?)ViewBag.Discount;
+}
+<h2>Thanks for joining Asma's Gym, @name!</h2>
+<p>You’re member number <strong>@count</strong>. Happy to have you with us.</p>
+
+@if (string.Equals(type, "Yearly", System.StringComparison.OrdinalIgnoreCase) && disc.HasValue)
+{
+    <p>Your yearly discount this time is <strong>@disc%</strong>.</p>
+    if (disc >= 70) { <p>Huge savings—nicely done.</p>; }
+    else if (disc >= 30) { <p>Solid deal.</p>; }
+    else { <p>Every bit helps. Welcome aboard to Asma's Gym!</p>; }
+}

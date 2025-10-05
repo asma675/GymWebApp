@@ -1,0 +1,53 @@
+﻿@model GymWebApp.Models.Member
+@using System.Collections.Generic
+@using System.Linq
+@using System.Web.Mvc
+
+@{
+    ViewBag.Title = "Join the Gym";
+    var opts = (ViewBag.MembershipOptions as IEnumerable<string>) ?? Enumerable.Empty<string>();
+    var plans = opts.Select(x => new SelectListItem { Text = x, Value = x }).ToList();
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "needs-validation" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, "Full name")
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "e.g., Jordan Avery" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Age)
+        @Html.TextBoxFor(m => m.Age, new { @class = "form-control", type = "number", min = "16" })
+        @Html.ValidationMessageFor(m => m.Age, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", placeholder = "you@example.com" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Phone, "Phone (include area code)")
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "(555) 123-4567" })
+        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MembershipType, "Plan")
+        @Html.DropDownListFor(m => m.MembershipType, plans, "-- Choose a plan --", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MembershipType, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Join</button>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
