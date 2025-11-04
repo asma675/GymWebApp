@@ -1,32 +1,31 @@
-﻿@{
+
     ViewBag.Title = "Home Page";
 }
 
 <main>
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Websites and Web applications using HTML, CSS and JavaScript.</p>
         <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
     </section>
 
     <div class="row">
         <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
+            <h2 id="gettingStartedTitle">Free Workout Day</h2>
+            <p> Want to try Asma's Gym for FREE? Come join us on the last Friday of every month for Free Workout Day. Anyone is welcome! </p>
             <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
         </section>
         <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <h2 id="About Asma's Gym'">About Asma's Gym</h2>
+            <p> Clean facilities, intelligent training, and customizable plans are all provided by the welcoming, 
+                nonjudgmental Asma Gym.  One exercise at a time, our instructors and programs assist all skill levels in developing strength, 
+                self-assurance, and healthful behaviors.</p>
             <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
         </section>
         <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <h2 id="hostingTitle">Our Location</h2>
+            <p> Mon–Fri 6am–10pm · Sat–Sun 8am–8pm </p>
+
+            </p>  123 Sample Street, Oakville, ON</p>
             <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
         </section>
         
@@ -34,7 +33,7 @@
             ViewBag.Title = "Home";
         }
         <div class="jumbotron text-center">
-            <h1>Welcome to ZenGym</h1>
+            <h1>Welcome to Asma's Gym</h1>
             <p>Your fitness journey starts here.</p>
             <p>
                 <a href="@Url.Action($"Join",$"Home")" class="btn btn-primary btn-lg">Join</a>
